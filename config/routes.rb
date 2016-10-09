@@ -1,4 +1,13 @@
-Rails.application.routes.draw do
+  FitLog::Application.routes.draw do
+    namespace :api do
+      namespace :v1 do
+        resources :exercises, defaults: {format: :json}, only: [:index]
+      end
+    end
+  end
+
+  Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
